@@ -1,0 +1,70 @@
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont[Mapping=tex-text]{Hoefler Text}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\title{Introduction To Algorithms \\ HomeWork 3 Solutions}
+\author{Junzhe Zheng}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\paragraph{1.}
+\hangafter 1
+\hangindent -2em
+\noindent
+\\
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Size  &RT(ms) & RT Ratio & nlog(n) &nlog(n) Ratio &Error\\
+\hline
+$2.5*10^{7}$ & 291 &   & $2.5*10^{7}*21.25$ &  &\\
+\hline
+$5*10^{7}$    & 591 & $\frac{591}{291}=2.03$ & $5*10^{7}*22.25$ & $\frac{5*10^{7}*22.25}{2.5*10^{7}*21.25}=2.09$ &$\frac{2.03-2.09}{2.09}=-2.87\%$ \\
+\hline
+$1*10^{8}$   & 1235 & $\frac{1235}{591}=2.09$ & $1*10^{8}*23.25$   & $\frac{1*10^{8}*23.25}{5*10^{7}*22.25}=2.09$ & $\frac{2.09-2.09}{2.09}=0.00\%$  \\
+\hline
+$2*10^{8}$   & 2567 & $\frac{2576}{1235}=2.09$ & $2*10^{8}*24.25$ & $\frac{2*10^{8}*24.25}{1*10^{8}*23.25}=2.09$ & $\frac{2.09-2.09}{2.09}=0.00\%$ \\
+\hline
+$4*10^{8}$   & 5416 & $\frac{5416}{2567}=2.11$ & $4*10^{8}*25.25$ & $\frac{4*10^{8}*25.25}{2*10^{8}*24.25}=2.08$ & $\frac{2.11-2.08}{2.08}=1.44\%$\\
+\hline
+$8*10^{8}$   & 11073 & $\frac{11073}{5416}=2.04$ & $8*10^{8}*26.25$ & $\frac{8*10^{8}*26.25}{4*10^{8}*25.25}=2.08$ & $\frac{2.04-2.08}{2.08}=-1.92\%$\\
+\hline
+\end{tabular}
+\\
+\\Let {n} be a list of integer number,$n_1<n_2<n_3<n_4<n_5<n_6$.
+\\Define:
+\[
+	RT\  Ratio\ =\ \frac{n_{i+1}}{n_{i}}	
+\]
+\[
+	nlog(n)\ Ratio\ =\ \frac{n_{i+1}*log(n_{i+1})}{n_i*log(n_i)}
+\]
+\[
+	Error\ =\ \frac{RT\ Ratio\ -\ nlog(n)\ Ratio}{nlog(n)\ Ratio}
+\]
+\\From above table, we can notice that the Error are small, which indicate that time complexity of Quicksort is based on n*log(n).
+\end{document}  
+

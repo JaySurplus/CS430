@@ -1,5 +1,4 @@
-import java.util.Random;
-
+import java.util.*;
 public class CS430HW3_Quicksort {
 
 	
@@ -10,26 +9,27 @@ public class CS430HW3_Quicksort {
 		System.out.println("A list of random interger numbers will be atuomatic generated.");
 		System.out.println("Then quicksort method will be applied to the list.");
 		System.out.println("This procedure will be repeated FIVE times with a differnt size of list.");
-		System.out.println("List sizes are 2500000,5000000,10000000,20000000,40000000 and 80000000");
+		System.out.println("User assign an inital size value, then this size will be enlarged 2 times for each loop.");
 		System.out.println("Time will be recorded during sorting process.");
-		System.out.println("For a certain size, sorting process will be repeated FIVE times to get the average sorting time.");
 		System.out.println("-----------------------------------------------");
 	
-		
-		int initSize = 2500000;
+		System.out.println("Please enten an initial size value (recommend 2500000):");
+		Scanner in = new Scanner(System.in);
+
+		int initSize = in.nextInt(); // This is the place you choose an initial size.
 		int size = initSize;
-		for (int i = 0 ; i <= 5 ; i ++){
+		for (int i = 0 ; i <= 5 ; i++){
 			
 			int[] results = randomIntArray(size);
 			
 			long startTime = System.currentTimeMillis();
-			
+			//Quick Sort
 			quickSort(results,0,size-1);
-			
+				
 			long endTime = System.currentTimeMillis();
 
 			System.out.println("Array size is: "+size);
-			System.out.println("Sorting time is: "+ (endTime-startTime)+ "milliseconds.");
+			System.out.println("Sorting time is: "+ (endTime-startTime)+ " milliseconds.");
 			System.out.println();
 			size = size*2;
 		}
@@ -47,8 +47,9 @@ public class CS430HW3_Quicksort {
 	}
 	
 	//Implement quicksort
-	static void quickSort(int[] temp2, int startIndex , int endIndex){
+	static void quickSort(int[] temp, int startIndex , int endIndex){
 		if (startIndex < endIndex){
+			int[] temp2 = temp;
 			int q = partition(temp2, startIndex, endIndex);
 			quickSort(temp2,startIndex,q-1);
 			quickSort(temp2,q+1,endIndex);
