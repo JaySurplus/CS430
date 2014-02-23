@@ -1,0 +1,72 @@
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont[Mapping=tex-text]{Hoefler Text}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\title{Introduction To Algorithms \\ HomeWork 4 Solutions}
+\author{Junzhe Zheng}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\paragraph{1.Give an example where quicksort requires $O(n^{2})$ steps.}
+\hangafter 1
+\hangindent 1.1em
+\noindent
+\\Consider a list:
+\[
+	10,9,8,7,6,5,4,3,2,1
+\]
+We choose the last digit in the last as the pivot.Thus time complexity is given as:
+\[
+	T(n)\ =\ T(n-1)+T(0)+\Theta(n)
+\]
+By using substitution method, we could get:
+\[
+	T(n)\ =\ \Theta(n^{2})
+\]
+If it is $\Theta(n^{2})$, it is also a $O(n^{2})$.
+\\
+\paragraph{2.Problem 4-6 (Page 110) CLRS(3rd Edition).}
+\hangafter 1
+\hangindent 1.1em
+\noindent
+\\a. Need to prove "if and only if", thus the proof will have to separate parts
+\\\it{ Proof of `Only if'}\normalfont:
+\\If A is a Monge array, by definition, we have:
+$$A[i,j]\ +A[k,l]\ <\ A[i,l]\ +A[k,j]\ \ \forall i\ ,\ j\ ,\ k\ ,\ l$$
+$$where\ 1<i<k<n\ ,\ 1<j<l<m$$
+Let $k=i+1,\ l=j+1$, we will have:
+$$A[i,j]\ +A[i+1,j+1]\ <\ A[i,j+1]\ +A[i+1,j]\ \ \forall i\ ,\ j$$
+$$where\ 1<i<i+1<n\ ,\ 1<j<j+1<m$$
+$$where\ 1<i<n-1\ ,\ 1<j<m-1$$
+`Only if' has been proved.
+\\
+\\\it{Proof of `if'}\normalfont:
+\\Induction method will be used separately on rows and columns.
+\\For rows:
+\\
+\end{document}  
+
