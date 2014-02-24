@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.1.24)  23 FEB 2014 18:04
+=======
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.1.24)  23 FEB 2014 01:08
+>>>>>>> 09bbedd92e8aa32c807c6ed30b806a6df5a86c47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -785,22 +789,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--52
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--71
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--71
+Underfull \hbox (badness 10000) in paragraph at lines 64--74
 
  []
 
 [1
 
-] [2] (./CS430_HW4.aux) ) 
+]
+Underfull \hbox (badness 10000) in paragraph at lines 81--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--97
+
+ []
+
+[2] (./CS430_HW4.aux) ) 
 Here is how much of TeX's memory you used:
  15248 strings out of 493938
  326641 string characters out of 6148857
- 325884 words of memory out of 5000000
+ 326884 words of memory out of 5000000
  18385 multiletter control sequences out of 15000+600000
  9985 words of font info for 57 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
