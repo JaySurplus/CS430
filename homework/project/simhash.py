@@ -32,7 +32,7 @@ class simhash():
         for i in range(self.hashbits):
             if v[i] >= 0:
                 fingerprint += 1 << i
-
+        print fingerprint
         return fingerprint
  
     def _string_hash(self, v):
@@ -59,19 +59,20 @@ class simhash():
         return tot
 
     
- 
+    '''
     def similarity(self, other_hash):
         a = float(self.hash)
         b = float(other_hash.hash)
         if a>b: return b/a
         return a/b
-
-
+   '''
+"""
 def similarity(a,b):
     a = float(a)
     b = float(b)
     if a>b: return b/a
     return a/b
+"""
 
 def hamming_distance(_hash, other_hash, bitLength):
     x = (_hash ^ other_hash) & ((1 << bitLength) - 1)
