@@ -32,6 +32,7 @@ class simhash():
         for i in range(self.hashbits):
             if v[i] >= 0:
                 fingerprint += 1 << i
+                print fingerprint
         print fingerprint
         return fingerprint
  
